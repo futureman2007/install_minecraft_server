@@ -1,0 +1,19 @@
+- name: "Install Minecraft Server"
+  hosts: all 
+  vars:
+    packages_list:
+      - "openjdk-19-jre-headless"
+      - "screen"
+      - "ufw"
+
+  tasks:
+    - name: "install all needed packages using apt"
+      ansible.builtin.import_role:
+        name: "install_package_w_apt"
+      vars:
+        package: "{{ item }}"
+      loop: "{{ packages_list }}"
+      when: ansible_facts.pkg_mgr == "apt"
+
+    
+
