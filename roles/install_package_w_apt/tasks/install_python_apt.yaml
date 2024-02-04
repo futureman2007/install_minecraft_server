@@ -1,0 +1,32 @@
+- name: "Check python version"
+  ansible.builtin.debug:
+    msg: "Current python version is: {{ ansible_facts['python']['version']['major'] }}"
+
+- name: "Fail when python 2 is used instead of python 3"
+  ansible.builtin.fail:
+    msg: "Python 2 is deprecated and dead! Please isntall python3 and pip3 to use this script! Abborting..."
+  when: ansible_facts['python']['version']['major'] < 3
+
+- name: "Check if pip3 is installed"
+  ansible.builtin.command:
+    cmd: "pip3 --version"
+  register: pip3_present
+  failed_when: pip3_present.rc != 0 or pip3_present.rc != 127
+  changed_when: false
+
+- name: "Fail when pip3 is not installed"
+  ansible.builtin.fail:
+    msg: "pip3 is needed for this automation! Abborting..."
+  when: pip3_present.rc == 127
+
+- name: "Check if python-apt is installed"
+  ansible.builtin.shell:
+    cmd: "pip3 list | grep -i apt"
+  register: package_present
+  changed_when: false
+  failed_when: package_present.rc != 0 or package_present.rc != 1
+
+- name: "Install python-apt"
+  ansible.builtin.command:
+    cmd: "pip3 install python-apt"
+  changed_when: true
