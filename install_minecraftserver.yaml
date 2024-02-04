@@ -22,4 +22,5 @@
   #   - also it needs to be generated first... (use ansible-vault for the private key file to be used here)
   #   - move all .sh files into server_scriptsfolder
   #   - update plugins with newest versions (buy mobdisguise)
+  #   - add password to unzip in ansible-vault var file and refer to it to decrypt zip files
   
