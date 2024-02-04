@@ -1,0 +1,27 @@
+- name: "create user {{ server_user }}"
+  ansible.builtin.user:
+    name: "{{ server_user }}"
+    shell: "/bin/bash"
+    password_lock: true
+  become: true
+
+- name: "create server folders"
+  ansible.builtin.file:
+    path: "{{ item }}"
+    owner: "{{ server_user }}"
+    group: "{{ server_user }}"
+    mode: '644'
+    state: directory
+    recurse: true
+  become: true
+  loop:
+    - "{{ server_home }}"
+    - "{{ server_jarfolder }}"
+    - "{{ server_backupfolder }}"
+    - "{{ server_scriptsfolder }}"
+
+
+  # TODO 
+  #   - add public-key to authenticate as minecraft user or password.
+  #   - also it needs to be generated first... (use ansible-vault for the private key file to be used here)
+  #   - move all .sh files into server_scriptsfolder

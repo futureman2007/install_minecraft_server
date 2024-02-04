@@ -15,6 +15,4 @@
         package: "{{ item }}"
       loop: "{{ apt_packages_list }}"
       when: ansible_facts.pkg_mgr == "apt"
-
-    
-
+      

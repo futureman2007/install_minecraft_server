@@ -1,0 +1,17 @@
+- name: "download spigot serverfiles"
+  ansible.builtin.get_url:
+    url: "{{ spiggot_downloadlink }}"
+    decompress: false
+    dest: "{{ server_jarfolder }}"
+    owner: "{{ server_user }}"
+    group: "{{ server_user }}"
+    mode: '644'
+
+- name: "copy jarfile to serverhome: {{ server_home }}"
+  ansible.builtin.copy:
+    src: "{{ server_jarfolder }}"
+    dest: "{{ server_home }}"
+    owner: "{{ server_user }}"
+    group: "{{ server_user }}"
+    mode: '644'
+    remote_src: true
