@@ -19,9 +19,3 @@
     - "{{ server_jarfolder }}"
     - "{{ server_backupfolder }}"
     - "{{ server_scriptsfolder }}"
-
-
-  # TODO 
-  #   - add public-key to authenticate as minecraft user or password.
-  #   - also it needs to be generated first... (use ansible-vault for the private key file to be used here)
-  #   - move all .sh files into server_scriptsfolder
