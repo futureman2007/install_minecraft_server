@@ -26,7 +26,8 @@
   changed_when: false
   failed_when: package_present.rc != 0 or package_present.rc != 1
 
-- name: "Install python-apt"
+- name: "Install python-apt if not installed"
   ansible.builtin.command:
     cmd: "pip3 install python-apt"
   changed_when: true
+  when: package_present.rc == 1
