@@ -31,3 +31,4 @@
     cmd: "pip3 install python-apt"
   changed_when: true
   when: package_present.rc == 1
+  become: true

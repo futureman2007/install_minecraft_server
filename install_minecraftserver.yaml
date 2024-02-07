@@ -2,19 +2,25 @@
   hosts: all 
   vars:
     apt_packages_list:
-      - "openjdk-19-jre-headless"
-      - "screen"
-      - "ufw"
-      - "vim"
-
+    - "openjdk-19-jre-headless"
+    - "screen"
+    - "ufw"
+    - "vim"
   tasks:
-    - name: "install all needed packages using apt"
+    - name: "install minecraft server dependencies using apt"
       ansible.builtin.import_role:
         name: "install_package_w_apt"
       vars:
         package: "{{ item }}"
       loop: "{{ apt_packages_list }}"
       when: ansible_facts.pkg_mgr == "apt"
+
+    - name: "install spiggot"
+      ansible.builtin.import_role:
+        name: "install spiggot"
+          
+        
+
 
 
         # TODO 
@@ -23,4 +29,7 @@
   #   - move all .sh files into server_scriptsfolder
   #   - update plugins with newest versions (buy mobdisguise)
   #   - add password to unzip in ansible-vault var file and refer to it to decrypt zip files
+  #   - load spiggot_plugins.yaml in play, and pass it to the role which downloads and installs the plugins
+  #   - add a secret file (encrypted) that needs to be added in order to download the plugins from payed_plugins_spigot.
+  #     gere the needed credentials for the download (user + pw) are provided
   

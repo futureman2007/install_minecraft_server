@@ -6,6 +6,8 @@ This Ansible Script installs a minecraft spiggot server on your linux System.
 - There is a user "ansible" present with its home under (home/ansible)
 - This user has sudo privileges and does not need a password to use them.
   Example entry in sudoers file: ansible ALL=(ALL:ALL) NOPASSWD: ALL
+- Requirements to execute the script properly will be checked when executing this ansible playbook.
+  If something is missing, it will tell you what is needed to be installed.
 
 # Security Recomendation
 - Authenticating as user "ansible" is possible over public-private keypair. The private key is generated on the system from where you want to connect to our minecraft host server.
