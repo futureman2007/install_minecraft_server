@@ -1,7 +1,12 @@
-spiggot_downloadlink: "https://download.getbukkit.org/spigot/spigot-{{ spiggot_version }}.jar"
+supported_servertypes:
+  - "spiggot"
+  - "craftbukkit"
+
+spiggot_downloadlink: "https://download.getbukkit.org/spigot/spigot-{{ mc_version }}.jar"
+craftbukkit_downloadlink: "https://download.getbukkit.org/craftbukkit/craftbukkit-{{ mc_version }}.jar"
 
 server_user: "minecraft"
-server_home: "/home/minecraft/spiggot-server/{{ spiggot_version: }}"
+server_home: "/home/minecraft/spiggot-server/{{ mc_version: }}"
 server_jarfolder: "{{ server_home }}/server-jar"
 server_backupfolder: "{{ server_home }}/backups"
 server_scriptsfolder: "{{ server_home }}/scripts"

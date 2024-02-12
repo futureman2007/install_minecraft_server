@@ -1,9 +1,9 @@
-- name: "Fail if spiggot version was not defined as extra var"
+- name: "Fail if minecraft version was not defined as extra var"
   ansible.builtin.fail:
-    msg: 'You need to specify the variable spiggot_version! Either by setting it in ../vars/main.yaml of this role or using --extra-vars "spiggot_version=<VERSION>"! Abborting...'
-  when: spiggot_version | length == 0
+    msg: 'You need to specify the variable mc_version! Either by setting it in ../vars/main.yaml of this role or using --extra-vars "mc_version=<VERSION>"! Abborting...'
+  when: mc_version | length == 0
 
-- name: "download spigot serverfiles"
+- name: "download serverfiles"
   ansible.builtin.get_url:
     url: "{{ spiggot_downloadlink }}"
     decompress: false
@@ -11,7 +11,6 @@
     owner: "{{ server_user }}"
     group: "{{ server_user }}"
     mode: '644'
-
 
 - name: "copy jarfile to serverhome: {{ server_home }}"
   ansible.builtin.copy:
