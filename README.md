@@ -21,4 +21,21 @@ This Ansible Role installs a minecraft server on your linux System and also the 
 - Authenticating as user "ansible" is possible over public-private keypair. The private key is generated on the system from where you want to connect to our minecraft host server.
   The corresponding public key is stored in the file /home/ansible/.ssh/authorized_keys of your minecraft host server.
 - The user "ansible" has a locked password ($ passwd -l ansible). Authentication over a password will not work even when you try it from the hosts terminal
+
+# Variables:
+The following variables can be defined. Some of them are mandatory.
+
+## Mandatory Variables:
+  - mc_version (String): Defines the Minecraft Server Version to be used for the installation
+
+## Optional Variables:
+- apt_packages_list (List of Strings): The list of packages to be installed using apt. Default packages are:
+  - screen 
+  - openjdk-19-jre-headless
+  - ufw
+  - vim 
+- type (spiggot|carftbukkit): The type of server to be installed. Default is "spiggot"
+  - 
+
+
   
