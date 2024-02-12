@@ -34,7 +34,7 @@ The following variables can be defined. Some of them are mandatory.
   - openjdk-19-jre-headless
   - ufw
   - vim 
-- type (spiggot|carftbukkit): The type of server to be installed. Default is "spiggot"
+- type (spiggot|craftbukkit): The type of server to be installed. Default is "spiggot"
 
 
   
