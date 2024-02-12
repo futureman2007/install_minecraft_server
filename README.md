@@ -35,7 +35,6 @@ The following variables can be defined. Some of them are mandatory.
   - ufw
   - vim 
 - type (spiggot|carftbukkit): The type of server to be installed. Default is "spiggot"
-  - 
 
 
   
