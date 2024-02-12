@@ -1,5 +1,8 @@
 # Minecraft Spiggot installer for Linux Server
-This Ansible Script installs a minecraft spiggot server on your linux System.
+This Ansible Role installs a minecraft spiggot server on your linux System and also the apt packages (if not present) 
+- screen 
+- default-jre 
+- ufw
 
 # Requirements
 - You have a Debian System (Like Ubuntu) as host for your minecraft server

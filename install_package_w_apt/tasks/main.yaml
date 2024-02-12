@@ -1,9 +1,0 @@
-- name: "Check and install apt requirements"
-  ansible.builtin.import_tasks:
-    file: "install_python_apt.yaml"
-
-- name: "install package using apt"
-  ansible.builtin.apt:
-    state: "present"
-    name: "{{ package }}"
-  become: true
