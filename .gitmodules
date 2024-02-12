@@ -1,0 +1,3 @@
+[submodule "roles/install_mc_server_plugins_and_scripts"]
+	path = roles/install_mc_server_plugins_and_scripts
+	url = https://github.com/futureman2007/install_mc_server_plugins_and_scripts.git
