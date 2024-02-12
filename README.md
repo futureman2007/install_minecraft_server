@@ -1,4 +1,4 @@
-# Minecraft Server installer for Linux Server
+# Minecraft Server installer Role for Linux Server
 This Ansible Role installs a minecraft server on your linux System and also the apt packages (if not present) 
 - screen 
 - openjdk-19-jre-headless
