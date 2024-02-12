@@ -1,8 +1,3 @@
-apt_packages_list:
-  - "ufw"
-  - "default-jre"
-  - "screen"
-  
 spiggot_downloadlink: "https://download.getbukkit.org/spigot/spigot-{{ spiggot_version }}.jar"
 
 server_user: "minecraft"

@@ -1,4 +1,6 @@
 spiggot_version: ""
-
-
-
+apt_packages_list:
+  - "ufw"
+  - "openjdk-19-jre-headless"
+  - "screen"
+  -  "vim"
