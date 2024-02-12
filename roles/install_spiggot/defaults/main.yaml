@@ -6,3 +6,5 @@ server_home: "/home/minecraft/spiggot-server/{{ spiggot_version: }}"
 server_jarfolder: "{{ server_home }}/server-jar"
 server_backupfolder: "{{ server_home }}/backups"
 server_scriptsfolder: "{{ server_home }}/scripts"
+server_pluginsfolder: "{{ server_home }}/plugins"
+

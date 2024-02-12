@@ -1,9 +1,7 @@
 - name: "Prepare Mineraft Server environment"
-  ansible.builtin.import_tasks: 
+  ansible.builtin.import_tasks:
     file: "prepare_server_environment.yaml"
 
 - name: "Download Spiggot and install it"
   ansible.builtin.import_tasks:
     file: "download_spiggot.yaml"
-
-  

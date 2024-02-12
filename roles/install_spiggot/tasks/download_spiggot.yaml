@@ -1,3 +1,8 @@
+- name: "Fail if spiggot version was not defined as extra var"
+  ansible.builtin.fail:
+    msg: 'You need to specify the variable spiggot_version! Either by setting it in ../vars/main.yaml of this role or using --extra-vars "spiggot_version=<VERSION>"! Abborting...'
+  when: spiggot_version | length == 0
+
 - name: "download spigot serverfiles"
   ansible.builtin.get_url:
     url: "{{ spiggot_downloadlink }}"
@@ -6,6 +11,7 @@
     owner: "{{ server_user }}"
     group: "{{ server_user }}"
     mode: '644'
+
 
 - name: "copy jarfile to serverhome: {{ server_home }}"
   ansible.builtin.copy:
