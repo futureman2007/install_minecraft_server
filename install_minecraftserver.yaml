@@ -19,17 +19,16 @@
       ansible.builtin.import_role:
         name: "install spiggot"
           
-        
-
 
 
         # TODO 
   #   - add public-key to authenticate as minecraft user or password.
-  #   - also it needs to be generated first... (use ansible-vault for the private key file to be used here)
-  #   - move all .sh files into server_scriptsfolder
-  #   - update plugins with newest versions (buy mobdisguise)
+  #     REQUIREMENTS: This playbook assumes, that the public_key/password to auth as ansible user is already installed.
+  #                   It also assumes, that there is a user "ansible" with root rights to create a new user and install new packages"
   #   - add password to unzip in ansible-vault var file and refer to it to decrypt zip files
-  #   - load spiggot_plugins.yaml in play, and pass it to the role which downloads and installs the plugins
-  #   - add a secret file (encrypted) that needs to be added in order to download the plugins from payed_plugins_spigot.
-  #     gere the needed credentials for the download (user + pw) are provided
+  #   - implement role to also set cronjob with @reboot sleep10; /usr/bin/screen -A -m -d -S minecraft /home/minecraft/minecraft-server/vanilla/ServerStart.sh
+  #   - do a handler (what fits better) to stop and restart the server. So this playbook can also be used to update the existing plugins.
+  #     for that, see notify handlers (notify, if the plugins zip has changed. Use the folder name with a date. if this folder name  does not exist, (like plugins-20-01-2024)
+  #     then there is an update of plugins or a new install. in anyway: if the handler sees: "oh! minecraft is running, sop and start it ")
+  #  
   
