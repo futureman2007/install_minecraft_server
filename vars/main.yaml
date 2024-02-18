@@ -1,10 +1,10 @@
 server_jarfile_spigot: "spigot-{{ mc_version }}"
 
-spigot_downloadlink: "https://download.getbukkit.org/spigot/{{ server_jarfile_sspigot}"
-
+spigot_downloadlink: "https://download.getbukkit.org/spigot/{{ server_jarfile_sspigot }}"
+server_starterscript_name: "start_minecraftserver.sh"
 server_user: "minecraft"
 
-server_home_spigot "/home/minecraft/sspigotrver/{{ mc_version }}"
+server_home_spigot: "/home/minecraft/sspigotrver/{{ mc_version }}"
 server_jarfolder: "{{ server_home }}/server-jar"
 server_backupfolder: "{{ server_home }}/backups"
 server_scriptsfolder: "{{ server_home }}/scripts"

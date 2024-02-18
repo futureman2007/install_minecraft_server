@@ -1,0 +1,15 @@
+- name: "Copy server starter script to Minecraft Server Host"
+  ansible.builtin.copy:
+    remote_src: false
+    src: ./files/
+    dest: "{{ server_home_spigot }}"
+    owner: "{{ server_user }}"
+    group: "{{ server_user }}"
+    mode: '744'
+
+- name: "Start Minecraft Server using starter script"
+  ansible.builtin.command:
+    cmd: "{{ server_home_spigot }}/{{ start_minecraftserver.sh }}"
+  register: startscript_return
+  changed_when: startscript_return.rc == 0
+  failed_when: startscript_return.rc == 1

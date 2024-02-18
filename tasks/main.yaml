@@ -23,3 +23,10 @@
   ansible.builtin.import_tasks:
     file: "download_serverfile.yaml"
 
+- name: "Setup cronjob"
+  ansible.builtin.import_tasks:
+    file: "setup_cronjobs.yaml"
+
+- name: "Start Minecraft Server"
+  ansible.builtin.import_tasks:
+    file: "run_server.yaml"

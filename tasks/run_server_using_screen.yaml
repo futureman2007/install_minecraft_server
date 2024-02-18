@@ -1,6 +1,0 @@
-- name: "Copy server starter script to Minecraft Server Hos"
-# TODO IMPLEMENT ME
-
-- name: "Start Minecraft Server using screen"
-  ansible.builtin.shell:
-    cmd: 

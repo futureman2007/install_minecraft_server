@@ -1,0 +1,13 @@
+- name: "install cronjob for starting minecraft server when system reboots"
+  ansible.builtin.cron:
+    name: "Start_Minecraft_spiggot_on_reboot"
+    job: "{{ server_home_spigot }}/{{ server_starterscript_name }}"
+    special_time: "reboot"
+    user: "{{ server_user }}"
+
+- name: "install cronjob for starting minecraft if not running (crash detection and auto restart)"
+  ansible.builtin.cron:
+    name: "Start_Minecraft_spiggot_on_reboot"
+    job: "{{ server_home_spigot }}/{{ server_starterscript_name }}"
+    minute: 5
+    user: "{{ server_user }}"
