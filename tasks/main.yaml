@@ -1,13 +1,7 @@
-- name: "Supported Minecraft servertypes"
-  ansible.builtin.debug:
-    msg: {{ item }}
-  loop: supported_servertypes
-
-- name: "Fail when passed type is not supported"
+- name: "Fail when mc_version was not passed"
   ansible.builtin.fail:
-    msg: "Your specified servertype: {{ type }} is not supported! Abborting..."
-  when: type != item
-  loop: supported_servertypes
+    msg: 'You need to specify the variable mc_version! Either by setting it in ../vars/main.yaml of this role or using --extra-vars "mc_version=<VERSION>"! Abborting...'
+  when: mc_version | length == 0
 
 - name: "Check and install apt requirements"
   ansible.builtin.import_tasks:

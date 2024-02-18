@@ -6,7 +6,7 @@ This Ansible Role installs a minecraft server on your linux System and also the 
 - vim 
 
 ## Supported servertypes:
-  - spiggot
+  - spigot
   - craftbukkit
 
 ## Requirements
@@ -34,7 +34,7 @@ The following variables can be defined. Some of them are mandatory.
   - openjdk-19-jre-headless
   - ufw
   - vim 
-- type (spiggot|craftbukkit): The type of server to be installed. Default is "spiggot"
+- type (spigotraftbukkit): The type of server to be installed. Default is "spspigot
 
 
   
