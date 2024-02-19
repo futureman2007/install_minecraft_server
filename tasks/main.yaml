@@ -3,6 +3,11 @@
     msg: 'You need to specify the variable mc_version! Either by setting it in ../vars/main.yaml of this role or using --extra-vars "mc_version=<VERSION>"! Abborting...'
   when: mc_version | length == 0
 
+- name: "Print mc version which is used to install the server"
+  ansible.builtin.debug:
+    msg: 'Installing with mc_version: {{ mc_version }}'
+  when: mc_version | length == 0
+
 - name: "Check and install apt requirements"
   ansible.builtin.import_tasks:
     file: "install_python_apt.yaml"
