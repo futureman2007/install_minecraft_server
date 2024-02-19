@@ -21,7 +21,7 @@
 
 - name: "Download Serverfile and install it"
   ansible.builtin.import_tasks:
-    file: "download_serverfile.yaml"
+    file: "download_serverfile_spiggot.yaml"
 
 - name: "Setup cronjob"
   ansible.builtin.import_tasks:
