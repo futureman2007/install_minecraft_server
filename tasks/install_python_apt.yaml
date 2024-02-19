@@ -24,7 +24,7 @@
     cmd: "pip3 list | grep -i apt"
   register: package_present
   changed_when: false
-  failed_when: package_present.rc != 0 or package_present.rc != 1
+  failed_when: package_present.rc != 0 and package_present.rc != 1
 
 - name: "Install python-apt if not installed"
   ansible.builtin.command:
