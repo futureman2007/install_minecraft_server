@@ -11,7 +11,7 @@
   ansible.builtin.command:
     cmd: "pip3 --version"
   register: pip3_present
-  failed_when: pip3_present.rc != 0 or pip3_present.rc != 127
+  failed_when: pip3_present.rc != 0 and pip3_present.rc != 127
   changed_when: false
 
 - name: "Fail when pip3 is not installed"
