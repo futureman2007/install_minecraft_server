@@ -6,7 +6,6 @@
 - name: "Print mc version which is used to install the server"
   ansible.builtin.debug:
     msg: 'Installing with mc_version: {{ mc_version }}'
-  when: mc_version | length == 0
 
 - name: "Check and install apt requirements"
   ansible.builtin.import_tasks:
