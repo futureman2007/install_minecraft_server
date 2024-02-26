@@ -32,8 +32,6 @@
   ansible.builtin.debug:
     var: package_present
 
-- name: Test
-
 - name: "Install python3-apt if not installed"
   ansible.builtin.command:
     cmd: "apt install python3-apt"
