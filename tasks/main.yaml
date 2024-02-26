@@ -11,6 +11,11 @@
   ansible.builtin.import_tasks:
     file: "install_python_apt.yaml"
 
+- name: "Update all repositories (apt update)"
+  ansible.builtin.apt:
+    update_cache: true
+  become: true
+
 - name: "install needed packages for Mineraft Server using apt"
   ansible.builtin.apt:
     state: "present"
