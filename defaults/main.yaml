@@ -1,4 +1,8 @@
 mc_version: ""
+needed_packages_for_python3_apt:
+  - iso-codes
+  - python-apt-common
+  - python3-apt
 
 apt_packages_list:
   - "ufw"

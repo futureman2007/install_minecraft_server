@@ -21,11 +21,16 @@
 
 - name: "Check if python-apt is installed"
   ansible.builtin.shell:
-    cmd: "apt list | grep -i python3-apt"
+    cmd: "apt list | grep -i {{ item }}"
+  loop: needed_packages_for_python3_apt
   register: package_present
   changed_when: false
   failed_when: package_present.rc != 0 and package_present.rc != 1
   when: ansible_facts.pkg_mgr == "apt"
+
+- name: "DEBUG print package_present var"
+  ansible.builtin.debug:
+    var: package_present
 
 - name: "Install python3-apt if not installed"
   ansible.builtin.command:
