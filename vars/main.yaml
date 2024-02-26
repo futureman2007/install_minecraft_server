@@ -9,3 +9,8 @@ server_jarfolder: "{{ server_home }}/server-jar"
 server_backupfolder: "{{ server_home }}/backups"
 server_scriptsfolder: "{{ server_home }}/scripts"
 server_pluginsfolder: "{{ server_home }}/plugins"
+
+needed_packages_for_python3_apt:
+  - iso-codes
+  - python-apt-common
+  - python3-apt
